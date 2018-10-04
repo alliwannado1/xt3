@@ -1,0 +1,3 @@
+<?component name="add-view-phong-ban" inline="true" macroURI="add-view-phong-ban.zul"?>
+<add-view-phong-ban model="${entry.phongBans.type().newInstance()}"  vmArgs="${arg.vmArgs}" save="Tạo mới phòng ban" />
+

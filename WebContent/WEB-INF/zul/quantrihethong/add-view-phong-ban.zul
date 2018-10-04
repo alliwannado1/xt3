@@ -1,0 +1,58 @@
+<idspace>
+	<window xmlns:n="native" xmlns:x="xhtml" xmlns:zk="zk" apply="org.zkoss.bind.BindComposer"
+		id="wdn" border="normal" mode="modal" action="show: slideIn" class="tcx-modal pop-up-width"
+		contentStyle="overflow:auto;" closable="true" title="${arg.save}"
+		onClose="@command('invokeGG', notify=vmArgs, detach=wdn, attr='targetQuery')"
+		whatever="@load(false,after='savePhongBan') @converter('vn.toancauxanh.service.DetachConverter')"
+		viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')">
+		
+			<zscript><![CDATA[
+				vmArgs = arg.get("vmArgs");
+				strSave = arg.get("save");
+			]]></zscript> 
+			
+		<div class="panel-box border-box mg-bottom-15">
+			<div class="row">
+				<div zclass="col-lg-12">
+					<div class="title-form">
+						<span>Thông tin thêm mới</span>
+					</div>
+				</div>
+			</div>
+			<div class="row mg-and-bg-and-line mg-bottom-5">
+				<div zclass="col-md-3">
+					<div zclass="form-group">
+						<span class="pd-top-5">Tên phòng ban</span> 
+						
+						<label zclass="error" value="@load(vmsgs[self.previousSibling])" />
+					</div>
+				</div>
+				<div zclass="col-md-3">
+					<div zclass="form-group">
+						<span>Mô tả</span> 
+						
+						<label zclass="error" value="@load(vmsgs[self.previousSibling])" />
+					</div>
+				</div>
+			</div>
+			<div class="row mg-and-bg-and-line">
+				<div zclass="col-md-6">
+					<div zclass="form-group">
+						<x:button  class="btn bg-btn-tailieu mg-btn-top btn-grey">
+					<x:image class="img-title" src="${contexPath}/assets/icon-bxtdn/dong.svg"/>
+						<span>Đóng</span>
+					</x:button>
+					</div>
+				</div>
+				<div zclass="col-md-6">
+					<div zclass="form-group right">
+						<x:button  class="btn mg-btn-top btn-blue mg-btn">
+						<x:image class="img-title" src="${contexPath}/assets/icon-bxtdn/luu.svg"/>
+							<span>Lưu</span>
+						</x:button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</window>
+</idspace>

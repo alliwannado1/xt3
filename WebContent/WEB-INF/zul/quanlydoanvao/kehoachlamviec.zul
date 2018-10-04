@@ -1,0 +1,149 @@
+<?page title="Thông tin văn bản" contentType="text/html;charset=UTF-8"?>
+<window xmlns:zk="zk" xmlns:n="native" xmlns:x="xhtml"
+	apply="org.zkoss.bind.BindComposer" class="form-list">
+	<zscript>
+		<![CDATA[
+			page.title = "Kế hoạch làm việc";
+		]]>
+	</zscript>
+	<div> 
+		<div class="panel-box">
+			<div zclass="row">
+				<div zclass="col-lg-12">
+					<div class="page-here">
+						<span>Quản lý đoàn vào</span>
+						<x:img class="img-arrow-right" src="${contexPath}/assets/icon-bxtdn/chevron-right-solid.svg" width="7px"></x:img>
+						<span class="active-title">Hội thảo kết nối đầu tư Đà Nẵng - Thái Lan</span>
+						<x:img class="img-arrow-right" src="${contexPath}/assets/icon-bxtdn/chevron-right-solid.svg" width="7px"></x:img>
+						<span>Kế hoạch làm việc</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel-box">
+			<div zclass="row">
+				<div zclass="col-lg-12">
+					<n:span class="page-header-title">
+						Kế hoạch làm việc
+					</n:span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel-box border-box mg-bottom-15">
+			<!-- start -->
+			<div class="row mgn-lr-10">
+				<div class="row">
+					<div zclass="col-lg-12">
+						<div class="title-form">
+							<span>Thông tin đoàn vào</span>
+						</div>
+					</div>
+				</div>
+				<div class="row mg-and-bg-and-line">
+					<div zclass="col-md-8">
+						<div zclass="form-group">
+							<span class="pd-top-5">Tên đoàn</span> 
+							<combobox readonly="true" class="his" placeholder="Loại lễ hội" width="100%">
+								<comboitem label="Testcase 1" />
+								<comboitem label="Testcase 2" />
+								<comboitem label="Testcase 3" />
+								<comboitem label="Testcase 4" />
+							</combobox>
+							<label zclass="error" value="@load(vmsgs[self.previousSibling])" />
+						</div>
+					</div>
+					<div zclass="col-md-4">
+						<div zclass="form-group">
+							<span>Thời gian bắt đầu xúc tiến</span> 
+							<datebox format="dd/MM/yyyy" class="hv-db"
+									 onCreate="self.value = new Date()" width="100%" placeholder="Chọn ngày"/>
+							<label zclass="error" value="@load(vmsgs[self.previousSibling])" />
+						</div>
+					</div>
+				</div>
+				<grid id="grid" 
+					emptyMessage="Không có mục nào trong danh sách">
+					<columns>
+						<column label="STT" style="text-align:center" width="42px"/>
+						<column label="Nội dung công việc" style="text-align:center" />
+						<column label="Người thực hiện" style="text-align:center" />
+						<column label="Thời gian" style="text-align:center" />
+						<column label="Trạng thái" style="text-align:center" />
+						<column label="Ghi chú" style="text-align:center" />
+					</columns>
+					<rows>
+						<row>
+							<label value="1"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<combobox readonly="true" class="his reset-mg-pd" placeholder="Chọn người thực hiện" width="100%">
+								<comboitem label="Testcase 1" />
+								<comboitem label="Testcase 2" />
+								<comboitem label="Testcase 3" />
+								<comboitem label="Testcase 4" />
+							</combobox>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<combobox readonly="true" class="his" placeholder="Trạng thái" width="100%">
+								<comboitem label="Testcase 1" />
+								<comboitem label="Testcase 2" />
+								<comboitem label="Testcase 3" />
+								<comboitem label="Testcase 4" />
+							</combobox>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+						</row>
+						<row>
+							<label value="2"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+						</row>
+						<row>
+							<label value="3"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+						</row>
+						<row>
+							<label value="4"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+							<label value="John Doe" style="text-align:center; display: block;"></label>
+						</row>
+					</rows>
+				</grid>
+				
+				<div class="row mg-and-bg-and-line">
+					<div zclass="col-xs-6 flex-box">
+						<div zclass="form-group">
+							<x:button  class="btn bg-btn-tailieu primary btn-grey ">
+								<x:image class="img-title" src="${contexPath}/assets/icon-bxtdn/dong.svg"/>
+								<span>Đóng</span>
+							</x:button>
+						</div>
+						<div zclass="form-group pd-left-11">
+							<x:button  class="btn bg-btn-tailieu primary btn-grey ">
+								<x:image class="img-title" src="${contexPath}/assets/icon-bxtdn/xuat-excel.svg"/>
+								<span>Xuất kế hoạch</span>
+							</x:button>
+						</div>
+					</div>
+					<div zclass="col-xs-6">
+						<div zclass="form-group right">
+							<x:button  class="btn primary btn-blue ">
+							<x:image class="img-title" src="${contexPath}/assets/icon-bxtdn/them-moi.svg"/>
+								<span>Thêm mới dự án</span>
+							</x:button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</window>
